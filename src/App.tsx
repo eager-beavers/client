@@ -1,13 +1,31 @@
 import {useState} from 'react'
+import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
+
 import './App.css'
+import HomePage from "./page/HomePage";
+import LoginPage from "./page/LoginPage";
 
 const App = () => {
     const [count, setCount] = useState(0)
 
+    //TODO: https://velog.io/@soryeongk/ReactRouterDomV6 (react-router-dom version 6에 대한 학습)
+    //TODO: 현재 패키지 관리 툴은 yarn 가능하면 npm과 같이 쓰지 않기
+
     return (
-        <div className="App">
-            Test
-        </div>
+        <Router>
+            <Link to={"/"}>Home</Link>
+            <Link to={"/login"}>Login</Link>
+            <Link to={"/test"}>Test</Link>
+            <Routes>
+                <Route path={"/"} element={<HomePage/>}/>
+                <Route path={"/login"} element={<LoginPage/>}/>
+                <Route path={"/test"} element={<div/>}/>
+            </Routes>
+        </Router>
+
+        // <div className="App">
+        //     Test
+        // </div>
         // <div className="App">
         //   <header className="App-header">
         //     <img src={logo} className="App-logo" alt="logo" />
