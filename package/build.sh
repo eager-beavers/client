@@ -1,6 +1,9 @@
 #!/bin/sh
 
+# 기존 파일 삭제
 rm -rf dist
+docker rmi -f drumbbang-client
+
 cd ../ || exit
 yarn install
 yarn build
