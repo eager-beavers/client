@@ -16,5 +16,5 @@ Client source code repo
 
 - CSS
   - https://tailwindcss.com/
-  - ![image](https://user-images.githubusercontent.com/73116773/174722668-65f28045-20f9-4bb1-a2b8-152a4d64b853.png)
+  ![image](https://user-images.githubusercontent.com/73116773/174722668-65f28045-20f9-4bb1-a2b8-152a4d64b853.png)
 
