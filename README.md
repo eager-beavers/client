@@ -12,3 +12,9 @@ Client source code repo
   - cors 해결은 어떻게?
   - 로그인, 인증 & 인가 방식은? (Token 관리 등)
   - Electron에 대한 의견나옴(feat.진혁) --> 웹, 모바일에서는 어떻게 보여줘야 좋을까? (웹뷰를 사용한다고 해도 모바일 고유 기능은? ex: 푸쉬알림)
+
+
+- CSS
+  - https://tailwindcss.com/
+  - ![image](https://user-images.githubusercontent.com/73116773/174722668-65f28045-20f9-4bb1-a2b8-152a4d64b853.png)
+
