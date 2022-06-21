@@ -14,7 +14,14 @@ Client source code repo
   - Electron에 대한 의견나옴(feat.진혁) --> 웹, 모바일에서는 어떻게 보여줘야 좋을까? (웹뷰를 사용한다고 해도 모바일 고유 기능은? ex: 푸쉬알림)
 
 
-- CSS
-  - https://tailwindcss.com/
+- CSS convention research
+  - https://tailwindcss.com/ (Tail wind css)
   ![image](https://user-images.githubusercontent.com/73116773/174722668-65f28045-20f9-4bb1-a2b8-152a4d64b853.png)
+  
+  - https://styled-components.com/ (Styled component)
+  ![image](https://user-images.githubusercontent.com/73116773/174722926-6984a607-6f0d-4ac5-a5fe-deefabdcba6e.png)
+  ![image](https://user-images.githubusercontent.com/73116773/174722954-8847968f-45ae-45e1-9c95-3607dad46352.png)
+
+
+  
 
