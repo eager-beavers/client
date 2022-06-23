@@ -21,6 +21,15 @@ Client source code repo
   - https://styled-components.com/ (Styled component)
   ![image](https://user-images.githubusercontent.com/73116773/174722926-6984a607-6f0d-4ac5-a5fe-deefabdcba6e.png)
   ![image](https://user-images.githubusercontent.com/73116773/174722954-8847968f-45ae-45e1-9c95-3607dad46352.png)
+  
+  
+- State library
+  - https://github.com/pmndrs/zustand (Zustand)
+  - https://recoiljs.org/ko/ (Recoil)
+
+
+- Tech of API
+  - https://graphql.org/ (GraphQL) 
 
 
   
