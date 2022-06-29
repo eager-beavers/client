@@ -31,6 +31,10 @@ Client source code repo
 - Tech of API
   - https://graphql.org/ (GraphQL) 
 
+- CI / CD
+  - Jenkins
+  - Githun Action
+
 
   
 
