@@ -33,7 +33,7 @@ Client source code repo
 
 - CI / CD
   - Jenkins
-  - Githun Action
+  - Github Action
 
 
   
