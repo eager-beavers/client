@@ -17,7 +17,7 @@ jobs:
       - run: yarn install
       - run: yarn run build
 
-      # (https://github.com/jakejarvis/s3-sync-action) # Test 참고
+      # (https://github.com/jakejarvis/s3-sync-action)
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
