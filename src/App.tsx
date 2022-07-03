@@ -16,6 +16,7 @@ const App = () => {
                 <Route path={"/"} element={<HomePage/>}/>
                 <Route path={"/login"} element={<LoginPage/>}/>
                 <Route path={"/test"} element={<div/>}/>
+                <div>진혁짱!</div>
             </Routes>
         </Router>
     )
