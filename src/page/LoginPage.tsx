@@ -4,7 +4,6 @@ const LoginPage = () => {
     return (
         <>
             <div>LoginPage</div>
-            <div>진혁짱</div>
         </>
     )
 }
