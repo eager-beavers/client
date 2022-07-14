@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Link, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 import HomePage from "./page/HomePage";
 import LoginPage from "./page/LoginPage";
@@ -9,9 +9,9 @@ const App = () => {
 
     return (
         <Router>
-            <Link to={"/"}>Home</Link>
-            <Link to={"/login"}>Login</Link>
-            <Link to={"/test"}>Test</Link>
+            {/*<Link to={"/"}>Home</Link>*/}
+            {/*<Link to={"/login"}>Login</Link>*/}
+            {/*<Link to={"/test"}>Test</Link>*/}
             <Routes>
                 <Route path={"/"} element={<HomePage/>}/>
                 <Route path={"/login"} element={<LoginPage/>}/>
