@@ -1,4 +1,6 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import "antd/dist/antd.css";
+import "./index.css";
 
 import HomePage from "./page/HomePage";
 import LoginPage from "./page/LoginPage";
