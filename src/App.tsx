@@ -18,9 +18,11 @@ const App = () => {
             {/*<Link to={"/test"}>Test</Link>*/}
             <Routes>
                 <Route path={"/"} element={<PageLayout/>}>
-                    <Route path={"/home"} element={<HomePage/>}/>
+                    <Route index element={<HomePage/>}/>
                     <Route path={"/test"} element={<HomePage/>}/>
                 </Route>
+
+                {/*TODO: Local storage에 로그인 정보를 담은 Token이 없으면 Login Page로 이동하도록 Route를 작성해야함*/}
                 <Route path={"/login"} element={<LoginPage/>}/>
             </Routes>
         </Router>
