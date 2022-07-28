@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ErrorPage = (props) => {
+const ErrorPage = (props: { errorCode?: 404 | undefined; }) => {
 
-    const {errorCode = 404} = props;
+    const {errorCode} = props;
 
     return (
         <p>Error Code {errorCode}</p>
