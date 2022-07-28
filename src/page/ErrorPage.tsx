@@ -1,9 +1,12 @@
 import React from 'react';
 
-const ErrorPage404 = (props) => {
+const ErrorPage = (props) => {
+
+    const {errorCode = 404} = props;
+
     return (
-        <p>404 Error Page!</p>
+        <p>Error Code {errorCode}</p>
     )
 }
 
-export default ErrorPage404;
+export default ErrorPage;
