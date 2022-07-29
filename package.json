@@ -5,10 +5,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest"
   },
   "dependencies": {
+    "@types/crypto-js": "^4.1.1",
     "antd": "^4.21.5",
+    "crypto-js": "^4.1.1",
     "history": "5",
     "jest": "^28.1.1",
     "react": "^18.0.0",
