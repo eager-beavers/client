@@ -1,9 +1,9 @@
 import crypto from 'crypto-js';
 
 export const dataEncryption = (value: string) => {
-    return crypto.HmacSHA1(value, "TEST KEY").toString();
+    return crypto.AES.encrypt(value, "TEST KEY").toString();
 }
 
 export const dataDecryption = (value: string) => {
-    return crypto.HmacSHA1(value, "TEST KEY").toString();
+    return crypto.AES.decrypt(value, "TEST KEY").toString();
 }

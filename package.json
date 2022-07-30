@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/crypto-js": "^4.1.1",
+    "@types/js-cookie": "^3.0.2",
     "antd": "^4.21.5",
     "crypto-js": "^4.1.1",
     "history": "5",
