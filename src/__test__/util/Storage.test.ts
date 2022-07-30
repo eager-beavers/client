@@ -1,4 +1,11 @@
-import {getCookie, setCookie, setLocalStorage, setSessionStorage} from "../../util/Storage";
+import {
+    getCookie,
+    getLocalStorage,
+    getSessionStorage,
+    setCookie,
+    setLocalStorage,
+    setSessionStorage
+} from "../../util/Storage";
 
 const TestStringKey = "TEST_STRING_KEY";
 const TestStringValue = "TEST_VALUE";
@@ -21,7 +28,7 @@ test("LocalStorage Util Test", () => {
     setLocalStorage(TestStringKey, TestStringValue);
     setLocalStorage(TestNumberKey, TestNumberValue);
 
-    const stringValue = getCookie(TestStringKey);
+    const stringValue = getLocalStorage(TestStringKey);
     const numberValue = Number(getCookie(TestNumberKey));
 
     expect(stringValue).toEqual(TestStringValue);
@@ -32,7 +39,7 @@ test("SessionStorage Util Test", () => {
     setSessionStorage(TestStringKey, TestStringValue);
     setSessionStorage(TestNumberKey, TestNumberValue);
 
-    const stringValue = getCookie(TestStringKey);
+    const stringValue = getSessionStorage(TestStringKey);
     const numberValue = Number(getCookie(TestNumberKey));
 
     expect(stringValue).toEqual(TestStringValue);
