@@ -18,6 +18,7 @@ const PageLayout = () => {
     const navigate = useNavigate();
     const {pathname} = useLocation();
     const [collapsed, setCollapsed] = useState(true);
+    const [headerName, setHeaderName] = useState("");
 
     const onChangePage = (e: { key: To; }) => {
         navigate(e.key);
@@ -46,30 +47,34 @@ const PageLayout = () => {
                         {
                             key: '/test1',
                             icon: <UserOutlined/>,
-                            label: 'nav 1',
+                            label: "회원관리",
+                            onClick:() => setHeaderName("  회원관리"),
                         },
                         {
                             key: '/test2',
                             icon: <VideoCameraOutlined/>,
                             label: 'nav 2',
+                            onClick:() => setHeaderName("  test2"),
                         },
                         {
                             key: '/test3',
                             icon: <UploadOutlined/>,
                             label: 'nav 3',
+                            onClick:() => setHeaderName("  test3"),
                         },
                     ]}
                 />
 
             </Sider>
             <Layout>
-                <Header className={"bg-amber-50 pl-5 pr-5"}>
+                <Header className={"bg-amber-50 pl-5 pr-5 flex-row"}>
                     {
                         createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                             className: "trigger",
-                            onClick: () => setCollapsed(prev => !prev)
+							onClick: () => setCollapsed(prev => !prev),
                         })
-                    }
+					}
+					{headerName}
                 </Header>
                 <Content className={"bg-amber-50 p-5"}>
                     <Outlet/>
