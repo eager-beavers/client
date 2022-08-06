@@ -1,9 +1,11 @@
 import create from "zustand";
+import UserContainer from "../container/UserContainer";
 
 interface TestCountState {
     testCount: number;
     addCount: () => void;
     resetCount: () => void;
+    userContainer: UserContainer;
     // toggleCompletedState: (id: string) => void;
 }
 
@@ -19,5 +21,6 @@ export const useStore = create<TestCountState>(set => ({
         set((state) => ({
             testCount: 0
         }))
-    }
+    },
+    userContainer: new UserContainer,
 }))
