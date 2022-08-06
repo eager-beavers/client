@@ -5,7 +5,7 @@ import "./index.css";
 import {ErrorPage, HomePage, LoginPage} from "./page";
 import {PageLayout} from "./component/common";
 
-import TestPage1 from "./page/TestPage1";
+import UserManagingPage from "./page/UserManagingPage";
 import TestPage2 from "./page/TestPage2";
 import TestPage3 from "./page/TestPage3";
 import PrivateRoute from "./component/app/PrivateRoute";
@@ -22,7 +22,7 @@ const App = () => {
                 <Route element={<PrivateRoute/>}>
                     <Route path={"/"} element={<PageLayout/>}>
                         <Route index element={<HomePage/>}/>
-                        <Route path={"/test1"} element={<TestPage1/>}/>
+                        <Route path={"/user-managing"} element={<UserManagingPage/>}/>
                         <Route path={"/test2"} element={<TestPage2/>}/>
                         <Route path={"/test3"} element={<TestPage3/>}/>
                     </Route>
