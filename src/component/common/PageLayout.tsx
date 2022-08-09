@@ -18,6 +18,7 @@ const PageLayout = () => {
     const navigate = useNavigate();
     const {pathname} = useLocation();
     const [collapsed, setCollapsed] = useState(true);
+    const [headerName, setHeaderName] = useState(<span/>);
 
     const onChangePage = (e: { key: To; }) => {
         navigate(e.key);
@@ -44,32 +45,36 @@ const PageLayout = () => {
                     onClick={onChangePage}
                     items={[
                         {
-                            key: '/test1',
+                            key: '/user-managing',
                             icon: <UserOutlined/>,
-                            label: 'nav 1',
+                            label: "회원관리",
+                            onClick: () => setHeaderName(<span>회원관리</span>),
                         },
                         {
                             key: '/test2',
                             icon: <VideoCameraOutlined/>,
                             label: 'nav 2',
+                            onClick: () => setHeaderName(<span>test2</span>),
                         },
                         {
                             key: '/test3',
                             icon: <UploadOutlined/>,
                             label: 'nav 3',
+                            onClick: () => setHeaderName(<span>test3</span>),
                         },
                     ]}
                 />
 
             </Sider>
             <Layout>
-                <Header className={"bg-amber-50 pl-5 pr-5"}>
+                <Header className={"bg-amber-50 pl-5 pr-5 flex flex-row items-center [&>span:not(:first-child)]:pl-3"}>
                     {
                         createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                             className: "trigger",
-                            onClick: () => setCollapsed(prev => !prev)
+                            onClick: () => setCollapsed(prev => !prev),
                         })
                     }
+                    {headerName}
                 </Header>
                 <Content className={"bg-amber-50 p-5"}>
                     <Outlet/>
