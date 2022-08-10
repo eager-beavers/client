@@ -1,20 +1,23 @@
 import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import logo from "../image/logo.png";
 import {Button, Input} from "antd";
+import {setLocalStorage} from "../util/Storage";
 
 const LoginPage = () => {
 
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
 
+    const navigate = useNavigate();
+
     const signIn = () => {
-        console.log(id)
-        console.log(password)
-
         try {
-
+            //TODO: Login API 요청
+            setLocalStorage("TEST_AUTH_KEY", true);
+            navigate("/");
         } catch (e) {
-
+            console.log(e)
         }
     }
 
