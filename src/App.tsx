@@ -4,9 +4,10 @@ import "./index.css";
 
 import {ErrorPage, HomePage, LoginPage} from "./page";
 import {PageLayout} from "./component/common";
+import {PAGE_URL} from "./constant/PageURL";
 
 import UserManagingPage from "./page/UserManagingPage";
-import TestPage2 from "./page/TestPage2";
+import BusinessDayManagingPage from "./page/BusinessDayManagingPage";
 import TestPage3 from "./page/TestPage3";
 import PrivateRoute from "./component/app/PrivateRoute";
 
@@ -22,8 +23,8 @@ const App = () => {
                 <Route element={<PrivateRoute/>}>
                     <Route path={"/"} element={<PageLayout/>}>
                         <Route index element={<HomePage/>}/>
-                        <Route path={"/user-managing"} element={<UserManagingPage/>}/>
-                        <Route path={"/test2"} element={<TestPage2/>}/>
+                        <Route path={PAGE_URL.USER_MANAGING} element={<UserManagingPage/>}/>
+                        <Route path={PAGE_URL.BUSINESS_DAY_MANAGING} element={<BusinessDayManagingPage/>}/>
                         <Route path={"/test3"} element={<TestPage3/>}/>
                     </Route>
                 </Route>

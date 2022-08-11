@@ -2,7 +2,7 @@ import React from 'react';
 import {apiTest} from "../api/ApiTest";
 
 //FIXME: Test Page --> 실제 사용할 페이지로 네이밍하고 교체하기
-const TestPage2 = () => {
+const BusinessDayManagingPage = () => {
 
     const apiCallTest = async () => {
         apiTest().then(result => {
@@ -15,4 +15,4 @@ const TestPage2 = () => {
     )
 };
 
-export default TestPage2;
+export default BusinessDayManagingPage;

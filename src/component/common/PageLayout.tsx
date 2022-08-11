@@ -10,6 +10,7 @@ import {
 } from '@ant-design/icons';
 import logo from "../../image/logo.png";
 import {useLocation} from "react-router";
+import {PAGE_URL} from "../../constant/PageURL";
 
 const {Header, Footer, Sider, Content} = Layout;
 
@@ -45,15 +46,15 @@ const PageLayout = () => {
                     onClick={onChangePage}
                     items={[
                         {
-                            key: '/user-managing',
+                            key: PAGE_URL.USER_MANAGING,
                             icon: <UserOutlined/>,
-                            label: "회원관리",
+                            label: "회원 관리",
                             onClick: () => setHeaderName(<span>회원관리</span>),
                         },
                         {
-                            key: '/test2',
+                            key: PAGE_URL.BUSINESS_DAY_MANAGING,
                             icon: <VideoCameraOutlined/>,
-                            label: 'nav 2',
+                            label: '영업일 관리',
                             onClick: () => setHeaderName(<span>test2</span>),
                         },
                         {
