@@ -48,14 +48,14 @@ const PageLayout = () => {
                         {
                             key: PAGE_URL.USER_MANAGING,
                             icon: <UserOutlined/>,
-                            label: "회원 관리",
+                            label: "회원관리",
                             onClick: () => setHeaderName(<span>회원관리</span>),
                         },
                         {
                             key: PAGE_URL.BUSINESS_DAY_MANAGING,
                             icon: <VideoCameraOutlined/>,
-                            label: '영업일 관리',
-                            onClick: () => setHeaderName(<span>test2</span>),
+                            label: '영업일관리',
+                            onClick: () => setHeaderName(<span>영업일관리</span>),
                         },
                         {
                             key: '/test3',
