@@ -114,10 +114,12 @@ const Calendar = (props: CalendarProps) => {
             }
         }
 
+
         return (
             <div>
                 <Checkbox checked={check} onChange={onChange}>
                     <span
+                        // @ts-ignore
                         className={`${stateColor(businessDayState)}`}>{businessDayState === "businessDay" ? "영업일" : "비영업일"}</span>
                 </Checkbox>
             </div>
