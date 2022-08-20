@@ -8,7 +8,7 @@ import {PAGE_URL} from "./constant/PageURL";
 
 import UserManagingPage from "./page/UserManagingPage";
 import BusinessDayManagingPage from "./page/BusinessDayManagingPage";
-import TestPage3 from "./page/TestPage3";
+import ClassroomManagingPage from "./page/ClassroomManagingPage";
 import PrivateRoute from "./component/app/PrivateRoute";
 
 //https://devalice.tistory.com/112
@@ -25,7 +25,7 @@ const App = () => {
                         <Route index element={<HomePage/>}/>
                         <Route path={PAGE_URL.USER_MANAGING} element={<UserManagingPage/>}/>
                         <Route path={PAGE_URL.BUSINESS_DAY_MANAGING} element={<BusinessDayManagingPage/>}/>
-                        <Route path={"/test3"} element={<TestPage3/>}/>
+                        <Route path={PAGE_URL.CLASSROOM_MANAGING} element={<ClassroomManagingPage/>}/>
                     </Route>
                 </Route>
 

@@ -58,10 +58,10 @@ const PageLayout = () => {
                             onClick: () => setHeaderName(<span>영업일관리</span>),
                         },
                         {
-                            key: '/test3',
+                            key: PAGE_URL.CLASSROOM_MANAGING,
                             icon: <UploadOutlined/>,
-                            label: 'nav 3',
-                            onClick: () => setHeaderName(<span>test3</span>),
+                            label: '연습실관리',
+                            onClick: () => setHeaderName(<span>연습실관리</span>),
                         },
                     ]}
                 />
