@@ -8,5 +8,4 @@ class BusinessDateModel {
     }
 }
 
-//@ts-ignore
 export default BusinessDateModel;

@@ -97,13 +97,7 @@ const Calendar = (props: CalendarProps) => {
                 unCheckedDate(trimHourMinSecMilli(date.format()));
         }
 
-        //
-        // useEffect(() => {
-        //
-        // }, [update])
-
-
-        const stateColor = (state: string) => {
+        const stateColor = (state: string | undefined) => {
             switch (state) {
                 case "businessDay":
                     return "text-lime-500";
@@ -119,7 +113,6 @@ const Calendar = (props: CalendarProps) => {
             <div>
                 <Checkbox checked={check} onChange={onChange}>
                     <span
-                        // @ts-ignore
                         className={`${stateColor(businessDayState)}`}>{businessDayState === "businessDay" ? "영업일" : "비영업일"}</span>
                 </Checkbox>
             </div>
