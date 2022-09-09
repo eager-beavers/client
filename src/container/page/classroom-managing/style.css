@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .antd-table {
+        background-color: #FFFFFF;
+        height: 100%;
+    }
+
+    .antd-table .ant-table-wrapper {
+        height: 100%;
+    }
+
+    .antd-table .ant-spin-nested-loading {
+        height: 100%;
+    }
+
+    .antd-table .ant-spin-container {
+        height: 100%;
+    }
+
+    .antd-table .ant-table {
+        overflow-y: scroll;
+        height: 90%;
+    }
+
+    .antd-table .ant-pagination {
+        margin-right: 20px;
+        height: 10%;
+    }
+
+    .antd-table .ant-table-container {
+        height: 100%;
+    }
+
+    .antd-table .ant-table-content {
+        height: 100%;
+    }
+
+    .antd-table .ant-table-content > table {
+        height: 100%;
+    }
+
+    /* Pagination button style */
+    .antd-table .ant-pagination > li > button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
