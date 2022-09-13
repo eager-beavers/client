@@ -1,22 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {userStore} from '../store/UserStore';
-import {Table} from 'antd';
+import {Space, Table} from 'antd';
 import UserModel from "../model/UserModel";
+import UserDialog from './UserDialog';
+import { ToastContainer } from 'react-toastify';
 
 //FIXME: Test Page --> 실제 사용할 페이지로 네이밍하고 교체하기
 
 
 const UserManagingPage = () => {
     const {userList, addUser, removeUser} = userStore();
+    
+    // TODO DB 값으로 교체
+    const [userUniqueNum, setUserUniqueNum] = useState(1);
 
+    const [currentUserId, setCurrentUserId] = useState(1);
+
+    const [isNew, setIsNew] = useState(false);
+
+    const [isChange, setIsChange] = useState(false);
+
+    const showModal = (user?: UserModel) => {
+        if (user === undefined) {
+            setIsNew(true);
+        } else {
+            setCurrentUserId(user.getUserUniqueNum())
+            setIsChange(true);
+        }
+    };
 
     const PAGE_SIZE = 5;
 
     const columns = [
         {
-            title: 'Name',     // title: 제목라인
-            dataIndex: 'userName', // dataIndex: 실제 값
-            key: 'userName',       // dataIndex와 일치해야 하며, dataIndex가 있으면 굳이 필요없음
+            title: 'Name',
+            dataIndex: 'userName',
+            key: 'userName',
             width: 150,
         },
         {
@@ -25,6 +44,29 @@ const UserManagingPage = () => {
             key: 'mobileNumber',
             ellipsis: true,
         },
+        {
+            title: 'Action',
+            key: 'action',
+            render: (user:UserModel) => (
+                <Space size="middle">
+                    <div className="flex flex-row justify-center items-center">
+                        <button type="button"
+                            className="toggle-theme-button flex right-5 bg-yellow-600 text-amber-50 p-1 rounded-md w-[80px] mx-5 text-center justify-center"
+                            onClick={() => showModal(user)}
+                        >
+                            변경
+                        </button>
+                        {isChange && currentUserId === user.getUserUniqueNum() && <UserDialog visible={true} userUniqueNum={user.getUserUniqueNum()} setIsOpen={setIsChange} setUserUniqueNum={setUserUniqueNum} userModel={user} />}
+                        <button type="button"
+                            className="toggle-theme-button flex right-5 bg-yellow-600 text-amber-50 p-1 rounded-md w-[80px] text-center justify-center"
+                            onClick={() => removeUser(user.getUserUniqueNum())}
+                        >
+                            삭제
+                        </button>
+                    </div>
+                </Space>
+            ),
+        },
     ];
 
     return (
@@ -32,10 +74,11 @@ const UserManagingPage = () => {
             <div className={"flex-col h-12"}>
                 <button type="button"
                         className="toggle-theme-button absolute right-5 bg-yellow-600 text-amber-50 p-1 rounded-md w-[100px]"
-                        onClick={() => addUser(new UserModel(0, "010-0000-0000", "우영우", "000"))}
+                        onClick={() => showModal(undefined)}
                 >
                     회원 추가
                 </button>
+                {isNew && <UserDialog visible={true} userUniqueNum={userUniqueNum + 1} setIsOpen={setIsNew} setUserUniqueNum={setUserUniqueNum} />}
             </div>
             <Table columns={columns} dataSource={userList}/>
         </>
