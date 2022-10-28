@@ -45,7 +45,15 @@ export const userStore = create<UserStore>(set => ({
     // },
 
     setUserList: (newList: Array<UserModel>) => {
-        set((state) => ({ ...state, testData: newList }));
+        // set((state) => ({ ...state, testData: newList }));
+        console.log(newList);
+
+        console.log("변경!")
+        set((state) => ({
+            userList: newList.map(item => item)
+        }));
+        console.log("변경!")
+
     },
 
     getUserList: async () => {
