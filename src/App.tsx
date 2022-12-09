@@ -1,44 +1,34 @@
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import "antd/dist/antd.css";
-import "./index.css";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import './App.css'
 
-import {ErrorPage, HomePage, LoginPage} from "./page";
-import {PageLayout} from "./component/common";
-import {PAGE_URL} from "./constant/PageURL";
+function App() {
+  const [count, setCount] = useState(0)
 
-import UserManagingPage from "./page/UserManagingPage";
-import BusinessDayManagingPage from "./page/BusinessDayManagingPage";
-import ClassroomManagingPage from "./page/ClassroomManagingPage";
-import PrivateRoute from "./component/app/PrivateRoute";
-import LessonManagingPage from "./page/LessonManagingPage";
-
-//https://devalice.tistory.com/112
-const App = () => {
-    //TODO: https://velog.io/@soryeongk/ReactRouterDomV6 (react-router-dom version 6에 대한 학습)
-    //TODO: 현재 패키지 관리 툴은 yarn, npm 같이 쓰지 않기
-
-    return (
-        <Router>
-            <Routes>
-
-                <Route element={<PrivateRoute/>}>
-                    <Route path={"/"} element={<PageLayout/>}>
-                        <Route index element={<HomePage/>}/>
-                        <Route path={PAGE_URL.USER_MANAGING} element={<UserManagingPage/>}/>
-                        <Route path={PAGE_URL.BUSINESS_DAY_MANAGING} element={<BusinessDayManagingPage/>}/>
-                        <Route path={PAGE_URL.CLASSROOM_MANAGING} element={<ClassroomManagingPage/>}/>
-                        <Route path={PAGE_URL.LESSON_MANAGING} element={<LessonManagingPage/>}/>
-                    </Route>
-                </Route>
-
-                {/*TODO: Local storage에 로그인 정보를 담은 Token이 없으면 Login Page로 이동하도록 Route를 작성해야함*/}
-                <Route path={"/login"} element={<LoginPage/>}/>
-
-                {/*TODO: ErrorPage 정의 하기*/}
-                <Route path={"*"} element={<ErrorPage errorCode={404}/>}/>
-            </Routes>
-        </Router>
-    )
+  return (
+    <div className="App">
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="/vite.svg" className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://reactjs.org" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </div>
+  )
 }
 
 export default App
